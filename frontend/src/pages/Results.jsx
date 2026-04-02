@@ -27,7 +27,7 @@ const Results = () => {
   // 2. Fetch the comparison data from your database
   const fetchGlobalAnalytics = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/analytics');
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/analytics`);
       setGlobalData(res.data);
       setIsLoading(false);
     } catch (err) {
